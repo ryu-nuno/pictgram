@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+
+#tuika
+before_action :login_check, {only: [:edit, :update, :show, :destroy]}
+#?
+
   def new
     @user = User.new
   end
