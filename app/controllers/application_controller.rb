@@ -13,17 +13,4 @@ class ApplicationController < ActionController::Base
     !current_user.nil?
   end
   
-  
-  #roguinntyekku
-  def login_check
-  unless user_signed_in?
-    flash[:alert] = "ログインしてください"
-    redirect_to root_path
-  end
-  end
-  
-  #tuika
-  class PhotosController < ApplicationController
-    before_action :login_check, only: [:new, :edit, :update, :destroy]
-  end
 end
